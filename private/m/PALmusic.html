@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>仙剑主题音乐精选集</title>
+    <meta name="description" content="作者抽空做了个仙剑音乐播放器的界面" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.min.css" />
+    <link rel="stylesheet" href="../css/palList.min.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+<body id="body" style="background-image: url(''); height: 100%">
+    <div class="music-player">
+        <div class="info">
+            <div class="left">
+                <a href="javascript:;" class="icon-music-down" title="下载音乐" onclick="downMP3();">
+                </a>
+            </div>
+            <div class="center">
+                <div class="jp-playlist">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <a href="javascript:;" id="sharemuisc" class="icon-share" title="分享音乐" style="margin-left: 70px;">
+                </a>
+                <div class="jiathis_style_32x32" style="display: none; z-index: 111">
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_qzone"></a>
+                     <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1395404115606277"
+                        charset="utf-8"></script>
+                </div>
+            </div>
+            <div class="progress jp-seek-bar">
+                <span class="jp-play-bar" style="width: 0%;"></span>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="current jp-current-time">
+                00:00</div>
+            <div class="play-controls">
+                <a href="javascript:;" class="icon-previous jp-previous" title="previous"></a><a
+                    href="javascript:;" class="icon-play jp-play" title="play" style="display: inline-block;">
+                </a><a href="javascript:;" class="icon-pause jp-pause" title="pause" style="display: none;">
+                </a><a href="javascript:;" class="icon-next jp-next" title="next"></a>
+            </div>
+            <div class="volume-level jp-volume-bar">
+                <span class="jp-volume-bar-value" style="width: 0%;"></span><a href="javascript:;"
+                    class="icon-volume-up jp-volume-max" title="max volume"></a><a href="javascript:;"
+                        class="icon-volume-down jp-mute" title="mute"></a>
+            </div>
+        </div>
+        <div id="jquery_jplayer" class="jp-jplayer">
+        </div>
+    </div>
+    <script src="../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.jplayer.min.js" type="text/javascript"></script>
+    <script src="../js/jplayer.playlist.min.js" type="text/javascript"></script>
+    <script src="../js/pal_playlist.min.js" type="text/javascript"></script>
+    <script src="../js/IsMobile.min.js" type="text/javascript"></script>
+    <script src="../js/24_solar_terms.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            //针对不同手机浏览器缩放播放器界面
+            if (IsMobile()) {
+                //获取浏览器宽高 限定对话框的宽高
+
+                var radh = $(document).height() / parseInt($(".music-player").css("height"));
+                var radw = $(document).width() / parseInt($(".music-player").css("width"));
+                var minradio = radw > radh ? radh : radw;
+
+                $(".music-player").css("width", (minradio * 3 * parseInt($(".music-player").css("width")) / 4) + "px");
+                $(".music-player").css("height", (minradio * 3 * parseInt($(".music-player").css("height")) / 4) + "px");
+
+
+            }
+
+            //读取二十四节气名称并设定背景图
+            var solarterm = Getsolarterms();
+            if (solarterm != null && solarterm != "") {
+                $("#body").css("background-image", "url(../images/24_solar_terms/" + solarterm + ".jpg)");
+
+            }
+            //分享按钮
+            $("#sharemuisc").click(function () {
+                $(".jiathis_style_32x32").toggle(800);
+            });
+        });
+
+        //下载音乐
+        function downMP3() {
+            var filename = "";
+            if ($("#jp_audio_0").attr("src") != null && $("#jp_audio_0").attr("src").indexOf("/") != -1) {
+
+                filename = $("#jp_audio_0").attr("src").substring($("#jp_audio_0").attr("src").lastIndexOf("/") + 1);
+            }
+            if (filename != "") {
+                var title = $.trim($(".jp-playlist-current").text());
+                if (confirm('确认要下载音乐《' + title.substring(1, title.indexOf(' ')) + '》吗？'))
+                    $(".icon-music-down").attr("href", "../../DLmusic.ashx?filepath=" + filename);
+
+            }
+            else alert("暂不支持IE8及以下浏览器下载。");
+        }
+    </script>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+        <script type="text/javascript" src="http://zhangweixiang.com/js/updateResult.js"></script>
+    </div>
+</body>
+</html>

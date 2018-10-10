@@ -1,0 +1,379 @@
+#menu { position: fixed; right: 20px; top: 50%; width: 90px; margin: -160px 0 0; padding: 0; list-style-type: none; z-index: 70;}
+#menu li { margin-top: 10px; font: 14px "Microsoft Yahei";}
+#menu a { display: block; padding: 10px 0; background-color: #fff; color: #000; text-align: center; text-decoration: none;}
+#menu .active a { color: #fff; background-color: rgb(157, 160, 163);}
+.section { text-align: center; font: 18px "Microsoft Yahei"; color: #fff;}
+.section1 { background: url(../images/bk.jpg) 100% no-repeat;}
+.screen-main { width: 1280px;  margin: 0 auto;}
+.screen-main span { position: absolute;}
+ 
+
+.screen-main .ci  
+{
+width: 240px;
+height: 225px;
+left: -501px;
+top: -455px;
+z-index: 2;
+background-image: url('../images/1401972981947465.png');
+background-repeat: no-repeat;
+/* background-attachment: fixed; */
+background-position: 8% 8%;
+ }
+ .screen-main .zhang
+{
+width: 230px;
+height: 310px;
+left: 1887px;
+top: -459px;
+z-index: 2;
+background-image: url('../images/1401972981947465.png');
+background-repeat: no-repeat;
+background-position: 48.5% 3%;
+ }
+ .screen-main .wei
+{
+width: 294px;
+height: 260px;
+left: -619px;
+top: 827px;
+z-index: 2;
+background-image: url('../images/1401972981947465.png');
+background-repeat: no-repeat;
+background-position:96.5% 5%;
+ }
+ .screen-main .xiang
+{
+width: 408px;
+height: 450px;
+left: 1887px;
+top: 827px;
+z-index: 2;
+background-image: url('../images/1401973125581364.png');
+background-repeat: no-repeat;
+background-position:94% 91%;
+ }
+.screen-main .slogen { width: 50px;
+height: 355px;
+left: 1462px;
+z-index: 1;
+top: 300px;
+left:760px;
+filter:alpha(opacity=0); /*IE滤镜，透明度50%*/
+-moz-opacity:0; /*Firefox私有，透明度50%*/
+opacity:0;
+
+background: url(../images/index_p.png) no-repeat;
+  -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    -ms-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+ }
+.screen-main .slogen:hover   
+{
+    background: url(../images/index_p.png) no-repeat;
+    background-position: -50px 0px;
+}
+  
+  .scrImagebk
+    {
+        background-image: url('../images/qmsht.jpg');
+        background-position: 0% 0%;
+        text-align: center;
+        width: 612px;
+        height: 607px;
+        margin-left: 105px;
+        -webkit-transition: 0.5s ease;
+        -moz-transition: 0.5s ease;
+        -ms-transition: 0.5s ease;
+        -o-transition: 0.5s ease;
+        transition: 0.5s ease;
+        -moz-border-color: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+        border-color: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+        display:block;
+    }
+    .scroll_border
+    {
+        left:780px;
+        top:120px;
+         display:block;
+        width: 820px;
+        height: 705px;
+        background-image: url('../images/scroll.png');
+        padding-top: 85px;
+        background-repeat: no-repeat;
+          -webkit-transition: 1.5s ease;
+        -moz-transition: 1.5s ease;
+        -ms-transition: 1.5s ease;
+        -o-transition: 1.5s ease;
+        transition: 1.5s ease;
+         filter: alpha(opacity=0);
+       -moz-opacity:0; 
+        opacity:0;
+        -moz-border-color: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+        border-color: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+    }
+.foot { margin-top: 100px; line-height: 30px; color: #666; font-size: 12px; text-align: center;}
+.foot a { color: #0074EA;}
+
+
+/* CLEAR FLOAT ELEMENTS
+============================== */
+
+/* http://sonspring.com/journal/clearing-floats */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+ 
+.clearfix:before,
+.clearfix:after,
+.content-list:before,
+.content-list:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.content-list:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+.clearfix,
+.content-list {
+  zoom: 1;
+}
+
+.one-three,
+.two-three,
+.full-three {
+	display: inline;
+	float: left;
+	margin: 0 10px;
+}
+.one-three{
+	width: 230px;
+}
+.two-three{
+	width: 510px;
+}
+.full-three {
+	width: 910px;
+}
+/* Contact */
+#gmap-container {
+	padding: 10px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+	   -box-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+		    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+#gmap {
+	width: 890px;
+	height: 200px;
+}
+.separator {
+	background: url(../images/separator.png) no-repeat center center;
+	height: 50px;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	font-size: 48px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 100px;
+	color: #272829;
+	text-shadow: 0px 1px 0px #47484a, 0px -1px 0px #131414;
+}
+h2 {
+	font-size: 24px;
+	line-height: 40px;
+	color: #373737;
+	font-family: 'Muli', Helvetica, Arial;
+	font-weight: normal;
+	text-shadow: 0px 1px 0px #fff;
+	border-bottom: solid 1px #cecece;
+	margin-bottom: 15px;
+}
+h3 {
+	font-size: 14px;
+	font-family: Helvetica, Arial;
+	font-weight: bold;
+	color: #440000;
+	margin-bottom: 5px;
+	text-align: left;
+text-shadow: 1px 0 1px #FFFFFF, 0 1px 1px #ffffff, 0 -1px 1px #FFFFFF, -1px 0 1px #FDFDFD;
+}
+h4 {
+	font-size: 12px;
+	font-family: Helvetica, Arial;
+	font-weight: bold;
+	color: #373737;
+	line-height: 14px;
+}
+p {
+	margin-bottom: 10px;
+	line-height: 18px;
+}
+
+.contract_info
+{
+    font-family: Helvetica, Arial, sans-serif;
+font-size: 12px;
+color: #575757;
+text-align: left;
+}
+
+/* FORM
+============================== */
+.form-component {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.success {
+	line-height: 30px;
+	text-align: center;
+	background: #9ac797;
+	color: #546e35;
+	margin-bottom: 30px;
+	-webkit-border-radius: 4px;
+	   -box-border-radius: 4px;
+		    border-radius: 4px;
+}
+.input {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #575757;
+    display: block;
+	margin-bottom: 3px;
+    padding: 4px;
+	-webkit-box-shadow: inset 0px 10px 10px 0px rgba(240, 240, 240, 0.75), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+	   -box-box-shadow: inset 0px 10px 10px 0px rgba(240, 240, 240, 0.75), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+		    box-shadow: inset 0px 10px 10px 0px rgba(240, 240, 240, 0.75), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+}
+.textfield {
+    width: 310px;
+    height: 24px;
+    line-height: 18px;
+}
+label.error{
+	padding-left: 5px;
+	color: #DD1144;
+	font-size: 11px;
+}
+.textarea {
+    width: 410px;
+    height: 80px;
+}
+.btn {
+	border-left: 1px solid #222222;
+    border-right: 1px solid #222222;
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid #000000;
+    font-family: Helvetica, Arial, sans-serif;
+	display: block;
+	padding: 5px 10px;
+	color: #FFFFFF;
+	cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+	background-color: #414141;
+	*background-color: #222222;
+	background-repeat: repeat-x;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 4px;
+    -box-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 0px rgba(255, 255, 255, 0.9);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 0px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 0px rgba(255, 255, 255, 0.9);
+    background-image: linear-gradient(top, #555555, #222222);
+}
+.btn:hover {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #222222;
+	*background-color: #151515;
+
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+	   -moz-transition: background-position 0.1s linear;
+	    -ms-transition: background-position 0.1s linear;
+	     -o-transition: background-position 0.1s linear;
+		    transition: background-position 0.1s linear;
+}
+#content {
+	 width: 950px;
+margin: 0 auto;
+//	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+}
+#content-wrapper {
+	position: relative;
+	margin-bottom: 30px
+}
+
+#content-core-wrapper {
+	padding: 10px 0 20px 0;
+}
+#content-core {
+	padding: 20px 10px 10px 10px;
+	/*background: #f0f0f0 url(../images/bg-content-effect.png) repeat-x left top;*/
+	-webkit-box-shadow: 0px 30px 10px 0px rgba(0, 0, 0, 0.70);
+	   -box-box-shadow: 0px 30px 10px 0px rgba(0, 0, 0, 0.70);
+		    box-shadow: 0px 30px 10px 0px rgba(0, 0, 0, 0.70);
+}
+#content-footer {
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	background:url(../images/bg-content-footer.png) repeat-x left top;
+}
+
+.Infowrap{border:1px dashed #ccc;background:#f8f8f8;padding:20px;}
+
+.float {
+width: 200px;
+padding: 5px 10px;
+border: 1px solid #ffecb0;
+font-size: 14px;
+background-color: #fffee0;
+-moz-box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+position: absolute;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: black;
+bottom: 50px;
+margin-left: 450px;
+display:none;
+}
+
+.net-inner { position: relative; width: 980px; height: 850px; margin: 0 auto; background-image: url(../images/bj-net_3cad4e6.png); overflow: hidden;}
+.net-inner a { text-decoration: none; color: #00a0e9; float: left; position: absolute; display: inline-block; white-space: nowrap }
+.net-inner a:hover { color: #054b6b }

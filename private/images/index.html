@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>此章微详</title>
+    <meta name="description" content="此章微详是一个个人网站，作者被弄去搞通信了" />
+    <link rel="stylesheet" href="css/vendor.min.css" />
+    <link rel="stylesheet" href="css/jpreloader.min.css" />
+    <link rel="stylesheet" href="css/jquery.fullPage.min.css">
+    <link rel="stylesheet" href="css/screen.min.css">
+    <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="js/24_solar_terms.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=LyQed0dpVpKQ9Ff2GVyONZEc"></script>
+    <script src="js/vendor.min.js"></script>
+    <script src="../js/jpreloader.min.js"></script>
+    <script src="../js/jquery-ui-1.10.3.min.js"></script>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <script language="javascript"> 
+<!--
+        window.onerror = function () { return true; } 
+// --> 
+    </script>
+</head>
+<body style="overflow: hidden; height: 100%;">
+    <!-- Header -->
+    <header id="header" style="margin: 0 auto">
+	<h3>此章微详</h3>
+	<div id="backlinks" class="backlinks" >
+		<a href="http://zhangweixiang.com/private/m/palmusic.html" target="_self">仙剑音乐集 &raquo;</a>
+		<a href="http://zhangweixiang.com/history-date.html" target="_blank">网站里程碑 &raquo;</a>
+	</div>
+    <div id="family" class="backlinks">
+  		<a href="http://zhangweixiang.com/private/love/index.html" target="_self">写给妻子 »</a>
+        <a href="http://zhangweixiang.com/private/xixi/index.html" target="_self">写给儿子 »</a>
+	</div>
+	<div class="clearfix"></div>
+</header>
+    <ul id="menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1">TOP</a></li>
+        <!--<li data-menuanchor="page2"><a href="#page2">个人简历</a></li>
+	<li data-menuanchor="page3"><a href="#page3">作品相关</a></li>
+	 -->
+        <li data-menuanchor="page2"><a href="#page2">留言板</a></li>
+    </ul>
+    <div class="section section1">
+        <div class="screen-main">
+            <span class="ci" rel="-501,-455,50,75"></span><span class="zhang" rel="1887,-159,277,30">
+            </span><span class="wei" rel="-619,-359,81,281"></span><span class="xiang" rel="1295,-259,338,300">
+            </span><a href="love/index.html" target="_self"><span class="slogen" rel="1462,-106,752,300">
+            </span></a><span class="scroll_border" rel="780,120,715,40" id="scroll_border"><span
+                id="bkchange" class="scrImagebk"></span></span>
+        </div>
+    </div>
+    <!--</div>-->
+    <div class="section" id="bk_solar" style="background-image: url('images/message.JPG');
+        background-position: 20% 20%; background-repeat: no-repeat;">
+        <div id="content" class="inner" style="display: block; height: 100%">
+            <div id="content-wrapper">
+                <div id="content-core-wrapper">
+                    <div id="content-core">
+                        <!-- Contact -->
+                        <div id="contact" class="content-list content-contact content-list-active" style="display: block;">
+                            <div class="full-three">
+                                <div id="gmap-container">
+                                    <div id="gmap">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="full-three separator">
+                            </div>
+                            <div class="two-three">
+                                <h2>
+                                    给我留言吧</h2>
+                                <form id="contact-form">
+                                <div class="form-component">
+                                    <h3>
+                                        您的姓名</h3>
+                                    <input type="text" class="input textfield" name="name" id="name">
+                                </div>
+                                <div class="form-component">
+                                    <h3>
+                                        您的邮箱</h3>
+                                    <input type="text" class="input textfield" name="email" id="email">
+                                </div>
+                                <div class="form-component">
+                                    <h3>
+                                        输入您的留言</h3>
+                                    <textarea class="input textarea" name="message" id="message"></textarea>
+                                </div>
+                                <input type="submit" class="btn" id="submit" value="点击留言" />
+                                </form>
+                            </div>
+                            <div class="one-three">
+                                <h2>
+                                    联系方式</h2>
+                                <h3>
+                                    QQ</h3>
+                                <p class="contract_info">
+                                    515095271</p>
+                                <h3>
+                                    Email</h3>
+                                <p class="contract_info">
+                                    info@zhangweixiang.com
+                                </p>
+                                <h3>
+                                    Web</h3>
+                                <p class="contract_info">
+                                    http://www.zhangweixiang.com</p>
+                                <h3>
+                                    可以到<span onclick="javascript:location.href='suggestion.txt';" style="color: blue;
+                                        cursor: pointer;">这里</span>查看留言记录。会尽量按照您的意见进行修改。
+                                </h3>
+                            </div>
+                            <div class="Infowrap">
+                                <div class="float">
+                                    <p id="infofloat">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                        <!-- End Contact -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer id="footer" style="margin: 0 auto; width: 100%; z-index: 999; height: 26px;
+        display: none">
+	<span id="Explanation">&copy; 2015 <a href="http://www.zhangweixiang.com">zhangweixiang.com</a>. Design by Xavier. Thanks to Liying.For her support, this site is not  postponed  too  much.</span><span style="height:30px;margin-left:40px;margin-top:2px">
+     <object type="application/x-shockwave-flash" data="dewplayer-rect.swf" width="240" height="20" id="dewplayer" name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="dewplayer-rect.swf" /> 
+     <param name="flashvars" value="mp3=music/贝加尔湖畔.mp3|music/DJ OKAWARI - Flower Dance.mp3|music/美丽拍挡.mp3|music/Here We Are Again.mp3&amp;autoreplay=1&amp;autostart=1" /> </object>     </span>
+    <span style="margin-left:200px">如有任何意见<a href="Mailto:info@zhangweixiang.com?CC=zwxscience@gmail.com&amp;Subject=some suggestions for zhangweixiang.com&amp;Body=Hi,xavier.Here is my suggestion:">给我发邮件</a>或者<a href="#page2" target="_self"> 留言</a></span>
+    <span  style="
+    float: right;
+    margin-right: 30px;
+">网站备案号:
+<a href="http://www.miitbeian.gov.cn/" >京ICP备14023890号</a></span>
+</footer>
+    <!-- This section is for Splash Screen -->
+    <section id="jSplash" style="margin: 0 auto">
+	
+	 
+	<section style="display:none">
+		<p style="font-size:30px;line-height: 50px;text-shadow: 1px 1px 1px rgba(0,0,0,0.4);">万物静观皆自得<br></p>
+		<p style="font-size:40px; margin-left:250px;width:500px;text-shadow: 1px 1px 1px rgba(0,0,0,0.4);" id="presecText" >四时佳兴与人同<br/></p>
+	<p><img src="images/welcome.png" alt="" style="width: 450px;height: 380px;border-radius: 10px;border-bottom: 3px solid rgba(255,255,255,0.5);-webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);box-shadow: 10px 10px 7px rgba(0,0,0,.7);" id="preImage" /></p>
+	</section>
+	 <p style="font-size:14px;line-height: 50px;text-shadow: 1px 1px 1px rgba(0,0,0,0.4);">推荐使用chrome浏览器<br></p>
+</section>
+    <!-- End of Splash Screen -->
+    <script type="text/javascript" src="js/IsMobile.min.js"></script>
+    <script type="text/javascript">
+        //进入页面首先判断是否是移动设备，是则进入移动设备入口
+        //if (IsMobile()) window.location.href = "m/PALmusic.html"; 
+
+        var int = 0; //画轴移动距离
+        var t = 0; //times val
+        var ScrollImageLength = 38525 - 400; //38525 画轴长度,会在小分辨率下更新，400作为卷尾无信息长度
+        function startMove() {
+            int += 3;
+            if (int >= ScrollImageLength) {//int >= 
+                clearInterval(t);
+                $("#bkchange").hide(); $("#scroll_border").css("width", "0px");
+            }
+            var pos = "-" + (int % ScrollImageLength) + "px 0";
+
+            $("#bkchange").css("background-position", pos);
+        }
+
+        $(document).ready(function () {
+            var screenheight = window.screen.height;
+            var screenwidth = window.screen.width;
+            var size = 1;
+
+            //读取二十四节气名称
+            var solarterm = Getsolarterms();
+            if (solarterm != null && solarterm != "") {
+                $("#bk_solar").css("background-image", "url(images/24_solar_terms/" + solarterm + ".jpg)");
+
+            }
+
+
+            if (screenheight < 900 || screenwidth < 1600) {
+                size = 2;
+                $(".section1").css("background", "url(images/bk.jpg) 50% no-repeat");
+                $(".screen-main .ci").css("background-image", "url(images/s_smaller.png)").css("width", parseInt($(".screen-main .ci").css("width")) / size + "px").css("height", parseInt($(".screen-main .ci").css("height")) / size + "px");
+                $(".screen-main .zhang").css("background-image", "url(images/s_smaller.png)").css("width", parseInt($(".screen-main .zhang").css("width")) / size + "px").css("height", parseInt($(".screen-main .zhang").css("height")) / size + "px");
+                $(".screen-main .wei").css("background-image", "url(images/s_smaller.png)").css("width", parseInt($(".screen-main .wei").css("width")) / size + "px").css("height", parseInt($(".screen-main .wei").css("height")) / size + "px");
+                $(".screen-main .xiang").css("background-image", "url(images/b_smaller.png)").css("width", parseInt($(".screen-main .xiang").css("width")) / size + "px").css("height", parseInt($(".screen-main .xiang").css("height")) / size + "px");
+                $(".screen-main .slogen").css("background-image", "url(images/index_p_s.png)").css("width", parseInt($(".screen-main .slogen").css("width")) * 2 / 3 + "px").css("height", parseInt($(".screen-main .slogen").css("height")) * 2 / 3 + "px").css("left", parseInt($(".screen-main .slogen").css("left")) / size + "px").css("top", parseInt($(".screen-main .slogen").css("top")) / size + "px");
+                $(".screen-main .scroll_border").css("background-image", "url(images/scroll_s.png)");
+                //小画幅下更新卷轴及其长度
+                $(".screen-main .scrImagebk").css("background-image", "url(images/qmsht_s.jpg)").css("width", parseInt($(".screen-main .scrImagebk").css("width")) * 4 / 5 + "px").css("height", parseInt($(".screen-main .scrImagebk").css("height")) * 4 / 5 + "px").css("margin-left", parseInt($(".screen-main .scrImagebk").css("margin-left")) * 4.1 / 5 + "px").css("margin-top", "-18px");
+                ScrollImageLength = 30794 - 200; //小图的长度
+                $("#gmap").css("height", "150px").css("width", "650px");
+                $(".form-component").css("padding-bottom", "0px");
+                $(".textfield ").css("height", "20px");
+                $("#content").css("width", "750px");
+                $(".full-three").css("width", "700px");
+                $(".two-three").css("width", "450px");
+                $("#Explanation").hide();
+
+                $("#presecText").css("margin-left", "100px");
+                $("#preImage").css("width", "400px").css("height", "280px");
+            }
+
+            var timer; //timer for splash screen
+
+            //        //navigation swap
+            $('#navigation a').on('click', function () {
+                if (!$(this).hasClass('btn-main')) {
+                    $('#navigation a')
+			.toggleClass('btn-secondary')
+			.toggleClass('btn-main');
+
+                    var tar = $(this).attr('href');
+                    $('.holder').fadeOut(500, function () {
+                        $(tar).fadeIn(500);
+                    });
+                }
+                return false;
+            });
+            //        $('#set2').hide();
+            // $('#header').css('top', '-100px');
+            $('#footer').css('bottom', '-100px');
+            //        $('#wrapper').hide();
+
+
+            //calling jPreLoader
+            $('body').jpreLoader({
+                splashID: "#jSplash",
+                loaderVPos: '80%',
+                splashVPos: '10%',
+                autoClose: true,
+                showPercentage: false,
+
+                closeBtnText: "进来看看吧!",
+                splashFunction: function () {
+                    //passing Splash Screen script to jPreLoader
+                    //$('#jSplash').children('p').not('.selected').hide();
+                    //$('#jSplash').hide().fadeIn(800);
+                    splashRotator();
+                    timer = setTimeout(function () {
+                        splashRotator();
+                    }, 300);
+
+                }
+            }, function () {	//callback function
+                clearTimeout(timer);
+
+
+                $.fn.fullpage({
+
+                    slidesColor: ['#fff', '#F9F3DC'],
+                    anchors: ['page1', 'page2'],
+                    menu: '#menu',
+                    afterRender: function () {
+                        $('.screen-main span').each(function () {
+                            var $rel = $(this).attr('rel');
+                            if ($rel == null || $rel == "") {
+                                //画轴
+                                if ($(this).attr("id") == "bkchange")
+                                    $("#scroll_border").fadeTo(1500, 0.9, function () { t = setInterval('startMove()', 40); });
+                                return;
+                            }
+                            var $arr = $rel.split(',');
+                            if ($(this).attr('class') != "slogen") {
+                                $(this).animate({
+                                    left: $arr[2] / size + 'px',
+                                    top: $arr[3] / size + 'px'
+                                }, 1000);
+                            }
+                            else {
+                                $(this).fadeTo(1200, 1);
+                            }
+
+                        });
+                        $('.inner a').each(function () {
+                            var $rel = $(this).attr('rel');
+                            var $arr = $rel.split(',');
+                            $(this).animate({
+                                left: $arr[0] + 'px',
+                                top: $arr[1] + 'px'
+                            }, 1000);
+                        });
+                        //显示顶部
+                        //  $('#header').fadeIn(1000);
+                        //$(".slogen").animate({ opacity: '0.5' }, "fast");
+
+                    },
+                    afterLoad: function (anchorLink, index) {
+                        if (index == 1) {
+                            $('.screen-main span').each(function () {
+                                var $rel = $(this).attr('rel');
+                                if ($rel == null || $rel == "") {
+                                    //画轴
+                                    if ($(this).attr("id") == "bkchange")
+                                        $("#scroll_border").fadeTo(1500, 0.9, function () {
+
+                                            $("#scroll_border").css("width", "820px");
+                                            $("#bkchange").fadeTo(1500, 1, function () { t = setInterval('startMove()', 40); });
+                                        });
+
+                                    return;
+                                }
+
+                                var $arr = $rel.split(',');
+                                $(this).animate({
+                                    left: $arr[2] / size + 'px',
+                                    top: $arr[3] / size + 'px'
+                                }, 500);
+                            });
+                            //显示顶部
+                            // $('#header').fadeIn(1000);
+
+                        }
+
+                        if (index == 2) {
+                            $('#content').css("margin-left", "100px");
+                            $('#content').fadeIn(1000);
+                            // 百度地图API功能
+                            var map = new BMap.Map("gmap");            // 创建Map实例
+                            var point = new BMap.Point(120.178575, 30.194244);    // 创建点坐标
+                            map.centerAndZoom(point, 15);                     // 初始化地图,设置中心点坐标和地图级别。
+                            map.enableScrollWheelZoom();
+
+                            var opts = {
+                                width: 200,     // 信息窗口宽度
+                                height: 60,     // 信息窗口高度
+                                title: "我在这", // 信息窗口标题
+                                enableMessage: true, //设置允许信息窗发送短息
+                                message: "NSN"
+                            }
+                            var infoWindow = new BMap.InfoWindow("", opts);  // 创建信息窗口对象
+                            map.openInfoWindow(infoWindow, point); //开启信息窗口
+
+                        }
+                    },
+                    onLeave: function (index, direction) {
+                        if (index == 1) {
+                            $('.screen-main span').each(function () {
+                                var $rel = $(this).attr('rel');
+                                if ($rel == null || $rel == "") {
+                                    //画轴
+                                    if ($(this).attr("id") == "bkchange")
+                                        clearInterval(t);
+                                    $("#bkchange").fadeTo(30, 0);
+                                    $("#scroll_border").css("width", "0px");
+
+                                    return;
+                                }
+                                var $arr = $rel.split(',');
+                                $(this).animate({
+                                    left: $arr[0] + 'px',
+                                    top: $arr[1] + 'px'
+                                }, 500);
+                            });
+                            //隐藏顶部
+                            //    $('#header').fadeOut(1000);
+                        }
+
+                        if (index == 2) {
+
+                            $('#content').fadeOut(1000);
+
+
+                        }
+                    }
+                });
+                $('#footer').fadeTo(2000, 1).animate({ "bottom": 0 }, 500).fadeTo(2500, 0.01);
+                $('#header').fadeTo(2000, 1).animate({ "bottom": 0 }, 500).fadeTo(2500, 0.01);
+
+
+                //验证表单
+                $("#contact-form").validate({
+                    rules: {
+                        name: "required",
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        message: {
+                            required: true,
+                            minlength: 5,
+                            maxlength: 150
+                        }
+                    },
+                    messages: {
+                        name: "请输入姓名",
+                        email: {
+                            required: "请输入Email地址",
+                            email: "请输入正确的email地址"
+                        },
+                        message: {
+                            required: "请输入留言信息",
+                            minlength: jQuery.format("留言信息不能少于{0}个字 符"),
+                            maxlength: jQuery.format("留言信息不能大少于{0}个字 符")
+                        }
+                    },
+                    submitHandler: function () {
+                        $.ajax({
+                            async: true,
+                            type: "POST",
+                            url: "../Info.ashx",
+                            data: $('#contact-form').serialize(), // 你的formid
+                            //  data: {'name': $("#name").val(), 'email': $("#email").val(), 'message': $("#message").val() },
+                            error: function (request) {
+                                $("#infofloat").html("网络发生错误，请稍后重试^_^");
+                                $("#infofloat").parent().fadeIn(1000);
+                                $("#infofloat").parent().fadeOut(2000);
+                            },
+                            success: function (data) {
+                                if (data == "sucess") {
+                                    $("#infofloat").html("您的消息我已经收到啦^_^");
+                                    $("#infofloat").parent().fadeTo("slow", 1);
+                                    $("#infofloat").parent().fadeOut(2000);
+                                    $('#message').val("").focus();
+                                    // $('#contact-form .input').val("").focus();
+                                    //  alert("您的消息我已经收到啦^_^");
+                                } else {
+                                    $("#infofloat").html("哎呀，一定是哪里出错了^_^");
+                                    $("#infofloat").parent().fadeTo("slow", 1);
+                                    $("#infofloat").parent().fadeOut(2000);
+                                }
+
+                            }
+
+                        });
+                    }
+                });
+
+                $('#footer').hover(function () {
+                    $(this).fadeTo(300, 1.0);
+                }, function () {
+                    $(this).fadeTo(500, 0.01);
+                });
+                $('#header').hover(function () {
+                    $(this).fadeTo(300, 1.0);
+                }, function () {
+                    $(this).fadeTo(500, 0.01);
+                });
+            });
+            ///初始化环境
+
+            $.fn.fullpage({
+
+                slidesColor: ['#fff', '#F9F3DC'],
+                anchors: ['page1', 'page2'],
+                menu: '#menu'
+            });
+
+
+
+            //create splash screen animation
+            function splashRotator() {
+
+
+
+                var cur = $('#jSplash').children('section:first-child').addClass('selected');
+                $(cur).fadeIn(1000);
+
+
+            }
+
+
+        });
+    </script>
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+    </div>
+</body>
+</html>

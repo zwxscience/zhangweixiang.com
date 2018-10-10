@@ -1,0 +1,2 @@
+[ 2017/8/29 15:46:15 ]	查找节点不存在:Site/Page[@URL="http://localhost:8080/"]
+[ 2017/8/29 15:46:19 ]	XML 操作失败:The process cannot access the file 'D:\personal\test\file\visitInfo.xml' because it is being used by another process.

@@ -1,0 +1,36 @@
+body {
+	margin: 0px; padding: 0px; font-size: 100%;
+}
+html {
+	margin: 0px; padding: 0px; font-size: 100%;
+}
+* {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+*::after {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+*::before {
+	box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.clearfix::before {
+	display: table; content: " ";
+}
+.clearfix::after {
+	display: table; content: " ";
+}
+.clearfix::after {
+	clear: both;
+}
+body {
+	background: rgb(73, 74, 95); color: rgb(213, 214, 226); font-family: "Microsoft YaHei","ËÎÌו","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif, FreeSans, Arimo; font-size: 1.05em; font-weight: 500;
+}
+a {
+	transition:0.2s; color: rgba(255, 255, 255, 0.6); text-decoration: none; -webkit-transition: 0.2s;
+}
+a:hover {
+	color: rgb(116, 119, 123); text-decoration: none;
+}
+a:focus {
+	color: rgb(116, 119, 123); text-decoration: none;
+}

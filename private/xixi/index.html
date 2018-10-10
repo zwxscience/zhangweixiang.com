@@ -1,0 +1,800 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link rel="shortcut icon" href="http://zhangweixiang.com/favicon.ico" />
+    <title>Hi XiXi !</title>
+    <!-- Thanks to LOO2K@zhihu -->
+    <meta content="遥怜小儿女，未解忆长安。距离虽远，仍是挂念。。" name="description">
+    <style type="text/css">
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td
+        {
+            margin: 0;
+            padding: 0;
+        }
+        table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        fieldset, img
+        {
+            border: 0;
+        }
+        address, caption, cite, code, dfn, em, strong, th, var
+        {
+            font-style: normal;
+            font-weight: normal;
+        }
+        ol, ul
+        {
+            list-style: none;
+        }
+        caption, th
+        {
+            text-align: left;
+        }
+        h1, h2, h3, h4, h5, h6
+        {
+            font-size: 100%;
+            font-weight: bold;
+        }
+        q:before, q:after
+        {
+            content: '';
+        }
+        abbr, acronym
+        {
+            border: 0;
+        }
+        
+        body, html
+        {
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* Common 定义基本样式 */
+        body
+        {
+            font: 12px/1.8 'Microsoft Yahei' , 'Helvetica Neue' ,Helvetica,Arial,Sans-serif;
+            padding: 0;
+            margin: 0;
+            color: #333333;
+        }
+        
+        #map
+        {
+            height: 100%;
+            width: 100%;
+        }
+        
+        #loading
+        {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 999;
+            background: url("images/loading.gif") no-repeat center center #FFF5D0;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 300px;
+            font-size: 32px;
+            color: #666;
+        }
+        #theEnd
+        {
+            height: 0%;
+            width: 100%;
+            line-height: 0;
+            font-size: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: 999;
+            background-color: #FFFAD1;
+            top: 0;
+            left: 0;
+        }
+        
+        #theEndText
+        {
+            position: absolute;
+            left: 0;
+            z-index: 9999;
+            width: 100%;
+            text-align: center;
+            font-size: 26px;
+            line-height: 2;
+            top: 50%;
+            margin-top: -100px;
+            height: 200px;
+        }
+    </style>
+    <script type="text/javascript" src="http://zhangweixiang.com/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://zhangweixiang.com/js/jquery.wshare.min.js"></script>
+    <script type="text/javascript" src="http://zhangweixiang.com/js/soundmanager2-nodebug-jsmin.js"></script>
+    <script type="text/javascript">
+        (function (a, b) { "use strict"; var c = function () { var a = [["requestFullscreen", "exitFullscreen", "fullscreenchange", "fullscreen", "fullscreenElement"], ["webkitRequestFullScreen", "webkitCancelFullScreen", "webkitfullscreenchange", "webkitIsFullScreen", "webkitCurrentFullScreenElement"], ["mozRequestFullScreen", "mozCancelFullScreen", "mozfullscreenchange", "mozFullScreen", "mozFullScreenElement"]]; for (var c = 0, d = a.length; c < d; c++) { var e = a[c]; if (e[1] in b) return e } } (); if (!c) return a.screenfull = !1; var d = "ALLOW_KEYBOARD_INPUT" in Element, e = { init: function () { return b.addEventListener(c[2], function (a) { e.isFullscreen = b[c[3]], e.element = b[c[4]], e.onchange(a) }), this }, isFullscreen: b[c[3]], element: b[c[4]], request: function (a) { a = a || b.documentElement, a[c[0]](d && Element.ALLOW_KEYBOARD_INPUT), b.isFullscreen || a[c[0]]() }, exit: function () { b[c[1]]() }, toggle: function (a) { this.isFullscreen ? this.exit() : this.request(a) }, onchange: function () { } }; a.screenfull = e.init() })(window, document)
+    </script>
+    <script type="text/javascript">
+
+        /*
+        * 常用变量
+        */
+        // 初始化地图中心
+        var MP_CEN = { lng: 3.894763, lat: 44.529534 };
+        // 中国中心
+        var CN_CEN = { lng: 103.758427, lat: 36.172333 };
+
+
+
+        // 杭州市
+        var HZ_FH = { lng: 120.187088, lat: 30.226342 };
+        // 周村
+        var ZB_ZC = { lng: 117.856946, lat: 36.807302 };
+        // 淮安中心
+        var HA_CE = { lng: 119.022017, lat: 33.516822 };
+        // 临沂红旗
+        var LY_HQ = { lng: 117.799854, lat: 35.727998 }; //
+
+        var HEART_TAIL = { lng: 118.56509783856397, lat: 34.807302 };
+        // 背景音乐
+        var MUSIC;
+
+        function zoomTo(zoom, time, callback, point) {
+            var time = time || 1000;
+            var callback = callback || function () { };
+            var loop = '';
+            function loopZoom() {
+                var curZoom = map.getZoom();
+                if (curZoom == zoom) {
+                    clearTimeout(loop);
+                    callback();
+                    return false;
+                }
+                var plus = curZoom > zoom ? -1 : 1;
+                var toZoom = curZoom + plus;
+                map.setZoom(toZoom);
+                if (point) {
+                    map.setCenter(point);
+                }
+                var center = map.getCenter();
+                loop = setTimeout(loopZoom, time);
+            }
+            loopZoom();
+        }
+        var site = new Array();
+        function loopWin(loopList, time,type, callback) {
+            var i = 0;
+            var len = loopList.length;
+            var callback = callback || function () { };
+            var timeout = '';
+
+            function loopWinInner() {
+                if (i == len) {
+                    clearTimeout(timeout);
+                    setTimeout(callback, 1000);
+                    return false;
+                }
+
+                var opts = {
+                    title: loopList[i].title,
+                    enableAutoPan: true
+                }
+                //map.panTo(new BMap.Point(loopList[i].point.lng, loopList[i].point.lat));
+                site.push(new BMap.Point(loopList[i].point.lng, loopList[i].point.lat));
+                var curve = new BMapLib.CurveLine(site, { strokeColor: "blue", strokeWeight: 2, strokeOpacity: 0.5 }); //创建弧线对象
+                map.addOverlay(curve); //添加到地图中
+
+                var infoWindow = new BMap.InfoWindow(loopList[i].content, opts);
+                map.openInfoWindow(infoWindow, new BMap.Point(loopList[i].point.lng, loopList[i].point.lat));
+
+                infoWindow.redraw();
+                i++;
+                if (loopList[i]) {
+                    var time = loopList[i].timeout || 2000;
+                } else {
+                    var time = 2000;
+                }
+                timeout = setTimeout(loopWinInner, time);
+            }
+
+            loopWinInner();
+        }
+
+        function panZoom_HZ() {
+            map.panTo(new BMap.Point(HZ_FH.lng, HZ_FH.lat));
+            setTimeout(function () {
+                zoomTo(16, 800, function () {
+                    var marker = new BMap.Marker(HZ_FH);
+                    map.addOverlay(marker);
+                    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                    setTimeout(panZoom_ZB, 1000);
+                }, HZ_FH);
+            }, 2800);
+        }
+
+        function panZoom_ZB() {
+            zoomTo(8, 1000, function () {
+                map.panTo(new BMap.Point(ZB_ZC.lng, ZB_ZC.lat));
+                setTimeout(function () {
+                    zoomTo(14, 800, function () {
+                        var marker = new BMap.Marker(ZB_ZC);
+                        map.addOverlay(marker);
+                        marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+                        setTimeout(panZoom_HEY, 1000);
+                    });
+                }, 1000);
+            });
+        }
+
+        function panZoom_HEY() {
+            zoomTo(7, 1500, function () {
+                map.panTo(new BMap.Point(HA_CE.lng, HA_CE.lat));
+                setTimeout(function () {
+                    var start = new BMap.Point(HZ_FH.lng, HZ_FH.lat);
+                    var end = new BMap.Point(ZB_ZC.lng, ZB_ZC.lat);
+                    var driving2 = new BMap.DrivingRoute(map, { renderOptions: { map: map, autoViewport: false} });
+                    driving2.search(start, end);
+                    setTimeout(function () {
+                        var between = [
+                    {
+                        title: '淄博 → 杭州',
+                        content: '881.5 公里.',
+                        point: HZ_FH
+                    },
+                    {
+                        title: '杭州 → 淄博',
+                        content: '坐高铁至少要5个小时。',
+                        point: ZB_ZC
+                    },
+                    {
+                        title: '相隔千里遥，咫尺一梦长。',
+                        content: '<img src="images/ticket.jpg" width="200" height="300" alt="ticket" />',
+                        point: HZ_FH
+                    }
+                ];
+                        map.closeInfoWindow();
+                        loopWin(between, 2000, 0,showPhotos);
+                    }, 2000);
+                }, 1000);
+            });
+        }
+
+        function showPhotos() {
+            map.clearOverlays();
+            map.panTo(new BMap.Point(HZ_FH.lng, HZ_FH.lat));
+            setTimeout(function () {
+                zoomTo(13, 1000, function () {
+                    var photos = [
+                {
+                    title: '那一天，你呱呱坠地',
+                    content: '<img src="images/birth.jpg" width="360" height="240" alt="出世" />',
+                    point: { lng: 120.175001, lat: 30.262353}//120.175001, 
+                },
+                {
+                    title: '那一天，迎接你回家',
+                    content: '<img src="images/home.jpg" width="240" height="425" alt="回家" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，你手脚起疹，我着急上火',
+                    content: '<img src="images/qipao.jpg" width="400" height="225" alt="疹子" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，第一次给妈妈过生日',
+                    content: '<img src="images/mombirth.jpg" width="240" height="360" alt="生日" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，爸爸当了你的多多罗',
+                    content: '<img src="images/duoduoluo.jpg" width="240" height="425" alt="多多罗" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，你给爸爸做了个冰激凌',
+                    content: '<img src="images/icecream.jpg" width="240" height="320" alt="多多罗" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，准备远行',
+                    content: '<img src="images/train.jpg" width="360" height="480" alt="回山东" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '那一天，都来喝满月酒',
+                    content: '<img src="images/manyue.jpg" width="360" height="240" alt="满月酒" />',
+                    point: { lng: LY_HQ.lng, lat: LY_HQ.lat }
+                },
+                {
+                    title: '那一天，我们到了姥姥家',
+                    content: '<img src="images/laolaojia.jpg" width="360" height="240" alt="姥姥家" />',
+                    point: { lng: ZB_ZC.lng, lat: ZB_ZC.lat }
+                },
+
+                {
+                    title: '那一天，爸爸去杭州，心中不舍',
+                    content: '<img src="images/leave.jpg" width="360" height="270" alt="将去杭州" />',
+                    point: { lng: ZB_ZC.lng, lat: ZB_ZC.lat }
+                },
+
+                {
+                    title: '从此，只能在微信里看你的成长和欢乐',
+                    content: '<img src="images/weixin.jpg" width="240" height="425" alt="微信" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '看你啃猪蹄',
+                    content: '<img src="images/kenzhuti.jpg" width="425" height="240" alt="啃猪蹄" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '看你洗澡澡',
+                    content: '<img src="images/xizaozao.jpg" width="240" height="369" alt="洗澡澡" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '看你打扮的美美哒',
+                    content: '<img src="images/meimeida.jpg" width="240" height="425" alt="萌物" />',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                },
+                {
+                    title: '嗯嗯',
+                    content: '当然还有TA。。',
+                    point: HZ_FH
+                },
+                 {
+                     title: '当微风拂过钱塘江面，我想念你',
+                     content: '<img src="images/qiantangjiang.jpg" width="360" height="240" alt="钱塘江" />',
+                     point: HZ_FH
+                 },
+                  {
+                      title: '当阳光洒落玉皇山顶，我思念你',
+                      content: '<img src="images/yuhuangshan.jpg" width="240" height="360" alt="玉皇山" />',
+                      point: HZ_FH
+                  }
+            ];
+                    loopWin(photos, 2500, 1,MustRemeber1);
+                });
+            }, 1000);
+        }
+
+        function MustRemeber1() {
+            map.clearOverlays();
+            map.panTo(new BMap.Point(LY_HQ.lng, LY_HQ.lat));
+            setTimeout(function () {
+                zoomTo(16, 1000, function () {
+                    var mr1 = [
+                {
+                    title: '爷爷家的',
+                    content: '曦曦，这些日子见过不少长辈吧，考考你哦。',
+                    point: LY_HQ
+                },
+                {
+                    title: '太爷爷和太奶奶',
+                    content: '<img src="images/laolaoye.jpg" width="400" height="265" alt="太爷爷" />',
+                    point: { lng: 117.80162, lat: 35.729726 }
+                },
+                {
+                    title: '爷爷',
+                    content: '<img src="images/yeye.jpg" width="360" height="239" alt="爷爷" />',
+                    point: { lng: 117.802841, lat: 35.730547 }
+                },
+                {
+                    title: '大爷爷',
+                    content: '<img src="images/dayeye.jpg" width="360" height="240" alt="大爷爷" />',
+                    point: { lng: 117.80223, lat: 35.730371 }
+                },
+                {
+                    title: '三爷爷',
+                    content: '<img src="images/sanyeye.jpg" width="240" height="320" alt="三爷爷" />',
+                    point: { lng: 117.797739, lat: 35.727675 }
+                },
+                {
+                    title: '四爷爷',
+                    content: '<img src="images/siyeye.jpg" width="400" height="265" alt="四爷爷" />',
+                    point: { lng: 117.797344, lat: 35.727236 }
+                },
+                {
+                    title: '五爷爷',
+                    content: '<img src="images/wuyeye.jpg" width="240" height="345" alt="五爷爷" />',
+                    point: { lng: 117.797128, lat: 35.725566 }
+                },
+                {
+                    title: '六爷爷',
+                    content: '<img src="images/liuyeye.jpg" width="400" height="265" alt="六爷爷" />',
+                    point: { lng: 117.794002, lat: 35.7251851 }
+                },
+                {
+                    title: '当然还有全家福',
+                    content: '<img src="images/quanjiafu.jpg" width="400" height="265" alt="全家福" />',
+                    point: { lng: 117.802841, lat: 35.730547 }
+                }
+            ];
+                    loopWin(mr1, 1500, 2,MustRemeber2);
+                });
+            }, 1000);
+        }
+        function MustRemeber2() {
+            map.closeInfoWindow();
+            zoomTo(13, 1000, function () {
+                map.panTo(new BMap.Point(ZB_ZC.lng, ZB_ZC.lat));
+                setTimeout(function () {
+                    var mr2 = [
+                {
+                    title: '姥爷家的',
+                    content: '还有现在你呆的姥爷家呢',
+                    point: ZB_ZC
+                },
+                {
+                    title: '太姥姥',
+                    content: '<img src="images/tailaolao.jpg" width="240" height="425" alt="太姥姥" />',
+                    point: { lng: 117.88257, lat: 36.809512 }
+                },
+                {
+                    title: '姥爷',
+                    content: '<img src="images/laoye.jpg" width="240" height="360" alt="姥爷" />',
+                    point: { lng: 117.856771, lat: 36.80684 }
+                },
+                {
+                    title: '姥姥',
+                    content: '<img src="images/laolao.jpg" width="240" height="425" alt="姥姥" />',
+                    point: { lng: 117.856771, lat: 36.80684 }
+                },
+                {
+                    title: '嘱咐曦曦的话',
+                    content: '爸爸现在不在你身边，妈妈一个人很累，你一定要乖啊',
+                    point: ZB_ZC
+                }
+            ];
+                    loopWin(mr2, 2000,3, wannaTo);
+                }, 1000);
+            });
+        }
+        function wannaTo() {
+            map.closeInfoWindow();
+            zoomTo(5, 1000, function () {
+                map.panTo(new BMap.Point(CN_CEN.lng, CN_CEN.lat));
+                map.setMapType(BMAP_HYBRID_MAP);
+                setTimeout(function () {
+                    var wanna = [
+                {
+                    title: '带你去旅行',
+                    content: '大公鸡里爸妈还有太多没有去过',
+                    point: CN_CEN
+                },
+                {
+                    title: '快快长大吧',
+                    content: '快快长大，以后带着你去哈。',
+                    point: CN_CEN
+                },
+                {
+                    title: '西藏',
+                    content: '<img src="images/wannato/xizang.jpg" width="360" height="288" alt="wannaTo" />',
+                    point: { lng: 91.115691, lat: 29.687083 }
+                },
+                {
+                    title: '凤凰古镇',
+                    content: '<img src="images/wannato/fenghuang.jpg" width="360" height="240" alt="wannaTo" />',
+                    point: { lng: 100.21191, lat: 26.928061 }
+                },
+                
+       
+                {
+                    title: '湖南',
+                    content: '<img src="images/wannato/zhangjiajie.jpg" width="360" height="216" alt="wannaTo" />',
+                    point: { lng: 110.458511, lat: 29.338708 }
+                },
+                {
+                    title: '桂林',
+                    content: '<img src="images/wannato/guilin.jpg" width="360" height="240" alt="wannaTo" />',
+                    point: { lng: 110.503626, lat: 24.780932 }
+                },
+
+                {
+                    title: '海南',
+                    content: '<img src="images/wannato/hainan.jpg" width="360" height="267" alt="wannaTo" />',
+                    point: { lng: 109.357835, lat: 18.299578 }
+                },
+                {
+                    title: '从这里出发',
+                    content: '一路向北',
+                    point: { lng: HZ_FH.lng, lat: HZ_FH.lat }
+                }
+            ];
+                    loopWin(wanna, 1000,4, showMarkerText);
+                }, 1000);
+            });
+        }
+        var routeObj = new Array();
+        function addMarker(lng, lat, type) {
+            var marker = new BMap.Marker(new BMap.Point(lng, lat));
+            // marker.setAnimation(BMAP_ANIMATION_DROP);
+            if (0 == type) {
+                marker.setAnimation(BMAP_ANIMATION_DROP); //跳动的动画
+            } else if (1 == type) {
+
+                var myIcon = new BMap.Icon("images/run.gif", new BMap.Size(208, 208));
+                marker = new BMap.Marker(new BMap.Point(lng, lat), { icon: myIcon });  // 创建标注
+                routeObj.push(marker);
+            }
+            map.addOverlay(marker);
+        }
+
+
+        var k = (HEART_TAIL.lat - HZ_FH.lat) / (HEART_TAIL.lng - HZ_FH.lng);
+        var b = HEART_TAIL.lat - k * HEART_TAIL.lng;
+        function loopAddRoute(times, callback) {
+            var i = 0;
+            var len = times;
+            var callback = callback || function () { };
+            var loop = '';
+            function loopAddRouteInner() {
+                if (i == len) {
+                    clearTimeout(loop);
+                    //人物隐藏
+                    for (var routeIndex = 0; routeIndex < routeObj.length; routeIndex++) {
+                        routeObj[routeIndex].hide();
+                    }
+                    callback();
+                    return false;
+                }
+                //k = y1 - y2 / x1 - x2
+                //b = y1 - k * x1
+                //y = i * (y1 - y2) / time
+                //x = (y - b) / k
+                var y = HZ_FH.lat + i * (HEART_TAIL.lat - HZ_FH.lat) / times;
+                var x = (y - b) / k;
+                // console.log("%d,%f,%f",i,x,y);
+                addMarker(x, y, 1);
+                i++;
+                if ((i % 3) == 0 && i != 0) {
+                    map.panTo(new BMap.Point(x, y));
+                }
+                loop = setTimeout(loopAddRouteInner, 200);
+            }
+            loopAddRouteInner();
+        }
+        var cac = 0;
+        var expendtimer = null;
+        var pointZB = null;
+        function expend() {
+            if (cac >= 5) {
+                map.setMapType(BMAP_HYBRID_MAP);
+                map.centerAndZoom(pointZB, 8);
+                window.clearInterval(expendtimer);
+            }
+            cac++;
+            map.centerAndZoom(pointZB, 11 - cac);
+        }
+        function loopAddHeart(callback) {
+            var point = new BMap.Point(HEART_TAIL.lng, HEART_TAIL.lat);
+            map.centerAndZoom(point, 11);
+            var i = 0;
+            var j = 0;
+            var len = 42;
+            var callback = callback || function () { };
+            var loop = '';
+            var r = 80;
+            //缩小到经纬度
+            var maxlat = 4;
+            var dx = maxlat / 357;
+            var dy = maxlat / 369;
+            var tx = maxlat * 179 / 357;
+            var ty = 52 * maxlat / 369;
+            function loopAddHeartInner() {
+                if (j == len) 
+                {
+                    clearTimeout(loop);
+  
+                    pointZB = new BMap.Point(ZB_ZC.lng, ZB_ZC.lat);
+                    var marker = new BMap.Marker(pointZB);
+                    marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                    map.addOverlay(marker);
+                    expendtimer = setInterval('expend()', 1000);
+                    pointZB = new BMap.Point(ZB_ZC.lng, ZB_ZC.lat);
+                    setTimeout(function () {
+                        map.panTo(pointZB);
+                        slideDown('theEnd', 1000, function () {
+                            var theEndText = '<div id="theEndText"><div>Miss my lovely kid and beautiful wife :)<p style="font-size:20px"> --by Xavier</p><br /></div>' +
+                         '<div style="display: inline-block;"><div id = \'share\' class="jiathis_style_32x32" ><span class="jiathis_txt">分享到：</span><a class="jiathis_button_qzone"></a><a class="jiathis_button_tsina"></a><a class="jiathis_button_weixin"></a></div><br/></div>' +
+                        '<div><button onclick="window.location.reload();">再看一次</button><button onclick="window.location.href=\'http://zhangweixiang.com\';">返回首页</button></div></div>';
+                            document.getElementById('theEnd').innerHTML = theEndText;
+
+                            loadScript("http://v3.jiathis.com/code/jia.js");
+                        });
+                    }, 8000);
+                    return false;
+                }
+                m = i;
+                n = -r * (((Math.sin(i) * Math.sqrt(Math.abs(Math.cos(i)))) / (Math.sin(i) + 1.4)) - 2 * Math.sin(i) + 2);
+                x = (n * Math.cos(m)) * dx;
+                y = n * Math.sin(m) * dy;
+                //旋转xy
+                //var a = Math.atan(-k);
+                //var nx = x * Math.cos(a) - y * Math.sin(a);
+
+                //var ny = x * Math.sin(a) + y * Math.cos(a);
+                //console.log("ori:%d,%f,%f", i, x, y);
+                x = HEART_TAIL.lng + x - 0.05 * maxlat; //+ 2 * 179 / 357 
+                y = HEART_TAIL.lat + 0.78 * maxlat - y; //+ 52 * 2 / 369
+                //console.log("mod:%d,%f,%f", i, x, y);
+                addMarker(x, y, 0);
+                i += 0.15;
+                j++;
+                if ((j % 2) == 0 && j != 0) {
+                    map.panTo(new BMap.Point(x, y));
+                }
+                loop = setTimeout(loopAddHeartInner, 400);
+            }
+            loopAddHeartInner();
+        }
+        function showMarkerText() {
+            map.closeInfoWindow();
+            map.setMapType(BMAP_NORMAL_MAP);
+            map.panTo(new BMap.Point(HZ_FH.lng, HZ_FH.lat));
+            setTimeout(function () {
+                zoomTo(12, 1000, function () {
+                    loopAddRoute(40, loopAddHeart);
+                })
+            }, 1000);
+        }
+
+        function slideDown(id, speed, callback) {
+            var object = document.getElementById(id);
+            var timeout = speed * 0.001;
+            var callback = callback || function () { };
+            var loop = '';
+            object.style.display = 'block';
+            object.style.height = '0%';
+            function slideDownInner() {
+                var curHeight = parseFloat(object.style.height) || 0;
+                if (curHeight >= 100) {
+                    clearTimeout(loop);
+                    callback();
+                    return false;
+                }
+                object.style.height = (curHeight + 0.1) + '%';
+                loop = setTimeout(slideDownInner, timeout);
+            }
+            slideDownInner();
+        }
+
+        function preLoadImages(imagesList, callback) {
+            var len = imagesList.length;
+            var i = 0;
+            var images = {};
+            var callback = callback || function () { };
+            function loadImage() {
+                if (i == len) {
+                    callback();
+                    return false;
+                }
+                images[i] = new Image();
+                images[i].src = imagesList[i];
+                i++;
+                loadImage();
+            }
+            loadImage();
+        }
+
+        var map;
+
+        function initMap() {
+            map = new BMap.Map("map");
+            var point = new BMap.Point(HZ_FH.lng, HZ_FH.lat);
+            map.centerAndZoom(point, 4);
+            map.disableDragging();
+            map.disableDoubleClickZoom();
+            init();
+        }
+
+        function init() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('theEnd').style.height = '0';
+            document.getElementById('theEnd').innerHTML = '';
+            map.setMapType(BMAP_NORMAL_MAP);
+            var point = new BMap.Point(HZ_FH.lng, HZ_FH.lat);
+            map.centerAndZoom(point, 4);
+            map.clearOverlays();
+            map.reset();
+            MUSIC.play();
+            map.panTo(new BMap.Point(HZ_FH.lng, HZ_FH.lat));
+            panZoom_HZ();
+            //showMarkerText();
+        }
+
+        function loadScript(src) {
+            var script = document.createElement("script");
+            script.src = src;
+            document.body.appendChild(script);
+        }
+
+        window.onload = function () {
+            var imglist = [
+        'images/birth.jpg',
+        'images/dayeye.jpg',
+        'images/duoduoluo.jpg',
+        'images/home.jpg',
+        'images/icecream.jpg',
+        'images/kenzhuti.jpg',
+        'images/laolao.jpg',
+        'images/laolaojia.jpg',
+        'images/laolaoye.jpg',
+        'images/laoye.jpg',
+        'images/leave.jpg',
+        'images/liuyeye.jpg',
+        'images/manyue.jpg',
+        'images/meimeida.jpg',
+        'images/mombirth.jpg',
+        'images/qiantangjiang.jpg',
+        'images/qipao.jpg',
+        'images/quanjiafu.jpg',
+        'images/sanyeye.jpg',
+        'images/siyeye.jpg',
+        'images/tailaolao.jpg',
+        'images/ticket.jpg',
+        'images/train.jpg',
+        'images/sanyeye.jpg',
+        'images/weixin.jpg',
+        'images/wuyeye.jpg',
+        'images/xizaozao.jpg',
+        'images/yeye.jpg',
+        'images/yuhuangshan.jpg',
+        'images/run.gif',
+        'images/wannato/fenghuang.jpg',
+        'images/wannato/guilin.jpg',
+        'images/wannato/hainan.jpg',
+        'images/wannato/zhangjiajie.jpg',
+        'images/wannato/xizang.jpg'
+    ];
+
+            soundManager.setup({
+                url: 'sm/',
+                onready: initMP3
+            });
+
+            function initMP3() {
+
+                MUSIC = soundManager.createSound({
+                    id: 'mp3',
+                    url: 'Five Hundred Miles.mp3',
+                    onload: function () {
+                        preLoadImages(imglist, function () {
+                            setTimeout(function () {
+                                var loading = document.getElementById('loading');
+                                loading.style.cursor = 'pointer';
+                                loading.innerHTML = '点击开始';
+                                loading.onclick = function () {
+                                   // screenfull && screenfull.request(); ;
+                                    loadScript("http://api.map.baidu.com/api?v=2.0&callback=initMap&ak=5VjqxfGEQ6AdjTAojXrgsXg4");
+                                    loadScript("http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js");
+                                   
+                                }
+                            }, 3000);
+                        });
+                    }
+                });
+                MUSIC.load();
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="loading">
+        正在加载...</div>
+    <div id="theEnd">
+    </div>
+    <div id="map">
+    </div>
+    <!-- JiaThis Button END -->
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+        <script type="text/javascript" src="http://zhangweixiang.com/js/updateResult.js"></script>
+    </div>
+</body>
+</html>

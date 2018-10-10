@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Y，X's Fover Love</title>
+    <link rel="Shortcut Icon" href="http://zhangweixiang.com/favicon.ico" />
+    <style type="text/css">
+        @font-face
+        {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+        .tips
+        {
+            margin-left: 500px;
+            margin-top: 400px;
+            width: 290px;
+            height: 30px;
+            position: absolute;
+            text-align: center;
+            border-radius: 20px;
+            font-weight: normal;
+            color: rgba(0,0,27,0.8);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 0;
+            background: url(images/blue.jpg);
+            opacity: 0.5;
+            filter: alpha(opacity=30);
+            background: linear-gradient(left,blue,#fff);
+            background: -ms-linear-gradient(left,blue,#fff);
+            background: -webkit-linear-gradient(left,rgb(135, 162, 86),#fff);
+            background: -o-linear-gradient(left,blue,#fff);
+            background: -moz-linear-gradient(left,blue,#fff);
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+            font-family: "Times New Roman" 微软雅黑 sans-serif,Georgia,Serif;
+        }
+    </style>
+    <link href="css/default.min.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="http://zhangweixiang.com/js/jquery.min.js"></script>
+    <!--[if IE]>
+   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <script type="text/javascript" src="js/excanvas.min.js" onload="explorercanvasload"></script>
+    <script type="text/javascript" src="js/excanvas.compiled.min.js"></script>
+  
+     <![endif]-->
+    <script type="text/javascript" src="js/garden.min.js"></script>
+    <script type="text/javascript" src="js/functions.min.js"></script>
+    <script language="javascript">
+        function key() {
+            //if(event.shiftKey){ 
+            //window.close();} 
+            //禁止shift
+
+
+
+            if (event.altKey) {
+                alert('不要乱按键盘哦');
+            }
+            //禁止alt
+
+
+
+            if (event.ctrlKey) {
+                alert('看看就好了,做一名安静的美男子，或是美女子');
+            }
+            //禁止ctrl
+
+
+
+            return false;
+        }
+
+
+
+        document.onkeydown = key;
+
+        if (window.Event)
+            document.captureEvents(Event.MOUSEUP);
+
+
+
+        //function nocontextmenu(){ 
+        //event.cancelBubble = true 
+        //event.returnValue = false; 
+        //return false;}
+
+
+
+        function norightclick(e) {
+            if (window.Event) {
+                if (e.which == 2 || e.which == 3)
+                    return false;
+            }
+            else if (event.button == 2 || event.button == 3) {
+                event.cancelBubble = true
+                event.returnValue = false;
+                return false;
+            }
+        }
+
+
+
+        function Click() {
+            //    alert('看看就好了,做一名安静的美男子，或是美女子');
+            window.event.returnValue = false;
+        }
+
+
+
+        document.oncontextmenu = Click;
+
+    </script>
+</head>
+<body>
+    <div style="position: absolute; z-index: 11; width: 100%; height: 100%;" id="flash">
+        <object id="flash_obj" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%"
+            height="100%" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0">
+            <param name="movie" value="images/index.swf">
+            <param name="quality" value="high">
+            <param name="wmode" value="transparent">
+            <embed src="images/index.swf" width="100%" height="100%" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                type="application/x-shockwave-flash" wmode="transparent">
+        </object>
+    </div>
+    <div id="mainDiv" style="margin-top: 50px;">
+        <!--  <div id="images" style="height:100px"> </div>-->
+        <div id="content">
+            <div id="code" class="trans" style="display: none">
+                <span class="comments">&nbsp;&nbsp;/**</span><br />
+                <span class="space" />&nbsp;&nbsp;<span class="comments">2014年10月，重阳，杭州</span><br />
+                <span class="space" />&nbsp;&nbsp;<span class="comments">*新生活，新工作</span><br />
+                <span class="space" />&nbsp;&nbsp;<span class="comments">*新的开始...</span><br />
+                <span class="space" />&nbsp;&nbsp;<span class="comments">**/</span><br />
+                &nbsp;&nbsp;念你我初识，最是青涩年少<br />
+                &nbsp;&nbsp;虽时光静寂，亦有相聚别离
+                <br />
+                <span class="comments">&nbsp;&nbsp;//我这一生最美好的场景，就是遇见你</span><br />
+                &nbsp;&nbsp;南阶教室，有青春汗水挥洒<br />
+                &nbsp;&nbsp;长望藕舫，有爱情成长恣意<br />
+                <span class="comments">&nbsp;&nbsp;// 生活中的细节已然悄悄忘记</span><br />
+                <span class="comments">&nbsp;&nbsp;// 但历史的印记书写了在心里</span><br />
+                <span class="placeholder" />&nbsp;&nbsp;曾在<span class="keyword">草原山长</span>间奔跑<br />
+                <span class="placeholder" />&nbsp;&nbsp;也在<span class="keyword">江海水阔</span>处嬉戏<br />
+                <span class="placeholder" />&nbsp;&nbsp;凄凉别后，相逢喜悦<br />
+                <span class="placeholder" />&nbsp;&nbsp;追梦失意，苦涩甜蜜<br />
+                <span class="placeholder" />&nbsp;&nbsp;但更多是平淡<br />
+                <span class="comments">&nbsp;&nbsp;//唯有平淡是最真</span><br />
+                &nbsp;&nbsp;以往，我们一路走来<br />
+                &nbsp;&nbsp;以后，我们将继续一路走去<br />
+                <br />
+                &nbsp;&nbsp;2007年12月15日，我们南京相恋。<br />
+                &nbsp;&nbsp;2013年07月13日，我们北京领证。<br />
+                &nbsp;&nbsp;2014年07月31日，我们开启了新的路途<br />
+                &nbsp;&nbsp;未来的几年，执子之手<br />
+                &nbsp;&nbsp;一起跨越山水，行走天地<br />
+                &nbsp;&nbsp;和你一起慢慢变老...<br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        I颖，这是我们在一起的时光。
+                        <div id="elapseClock">
+                        </div>
+                    </div>
+                    <div id="loveu">
+                        留存一段记忆只是片刻,<br />
+                        怀想一段记忆却是永远。<br />
+                        <div class="signature">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="imageshow" style="position: absolute">
+                <div class="tips">
+                    <span></span>
+                </div>
+                <img src=" " alt="" class="imageshow  trans" />
+            </div>
+            <div id="hide" style="position: absolute; display: none">
+                <img src="rili/0.jpg" alt="" />
+                <img src="rili/1.jpg" alt="" />
+                <img src="rili/2.jpg" alt="" />
+                <img src="rili/3.jpg" alt="" />
+                <img src="rili/4.jpg" alt="" />
+                <img src="rili/5.jpg" alt="" />
+                <img src="rili/6.jpg" alt="" />
+                <img src="rili/7.jpg" alt="" />
+                <img src="rili/8.jpg" alt="" />
+                <img src="rili/9.jpg" alt="" />
+                <img src="rili/10.jpg" alt="" />
+                <img src="rili/11.jpg" alt="" />
+                <img src="rili/12.jpg" alt="" />
+                <img src="rili/13.jpg" alt="" />
+                <img src="rili/14.jpg" alt="" />
+                <img src="rili/15.jpg" alt="" />
+                <img src="rili/16.jpg" alt="" />
+                <img src="rili/17.jpg" alt="" />
+                <img src="rili/18.jpg" alt="" />
+            </div>
+        </div>
+        <div id="copyright" style="height: 50px; bottom: 0px; position: absolute;">
+            <div style="opacity: 0.01;">
+                <audio controls="controls" autoplay="autoplay">
+  <source src="../music/植松伸夫 - ザナルカンドにて.mp3" type="audio/mpeg" />
+您的浏览器太古老啦。
+</audio>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        var count = 0;
+        together.setFullYear(2007, 12, 15);
+        together.setHours(20);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+        var changeID; $("#copyright div").fadeTo(50, 0.001);
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "您的浏览器成古董啦!<br/>推荐使用以下浏览器： Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            //document.body.appendChild(msg);
+
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+            $("body").html(msg);
+        } else {
+
+            $("#flash").css("height", $(window).height() - 50);
+            $("#flash_obj").attr("height", $(window).height() - 50);
+            //图片显示的位置
+            $("#imageshow img").css("margin-left", "520px");
+            $("#imageshow img").css("margin-top", "100px");
+
+            var screenheight = window.screen.height;
+            var screenwidth = window.screen.width;
+
+            if (screenheight < 900 || screenwidth < 1600) {
+
+                $("#code").css("width", "800px").css("height", "600px").fadeIn(1000);
+                $("#code").css("font-size", "12px").css("line-height", "20px");
+                $(".tips").css("margin-left", "450px");
+                $("#imageshow img").css("margin-left", "460px");
+                $("#mainDiv").css("margin-top", "0px");
+
+            } else
+                $("#code").css("width", "900px").css("height", "650px").fadeIn(1000);
+            //开始绘心
+
+            setTimeout(function () {
+                preStartheart();
+            }, 72000);
+
+            //计算日子
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+            //调整代码位置 书写code
+            adjustCodePosition();
+            $("#code").typewriter();
+            //更换背景
+
+            changeID = setInterval(function () {
+                changeImages();
+            }, 3600);
+        }
+	 	 
+    </script>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+        <script type="text/javascript" src="http://zhangweixiang.com/js/updateResult.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+html {
+	margin: 0px; padding: 0px; height: 100%; overflow: hidden; cursor: none; background-color: rgb(51, 51, 51);
+}
+body {
+	margin: 0px; padding: 0px; height: 100%; overflow: hidden; cursor: none; background-color: rgb(51, 51, 51);
+}
+#chalkboard {
+	background: url("../images/bg.png"); left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; z-index: 1; cursor: none;
+}
+.chalk {
+	background: url("../images/chalk.png"); margin: 0px; padding: 0px; left: 0px; width: 40px; height: 50px; bottom: 0px; position: absolute; z-index: 2; cursor: none;
+}
+.eraser {
+	background: rgb(153, 153, 153); border-radius: 5px; width: 50px; height: 100px; margin-top: -50px; margin-left: -25px; box-shadow: inset 0px 0px 10px #545445;
+}
+.panel {
+	margin: 1em; left: 0px; bottom: 0px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 18px; display: block; position: absolute; z-index: 5;
+}
+.panel a {
+	background: rgb(204, 204, 204); padding: 0.5em 1em; text-decoration: none; margin-right: 0.5em; display: inline-block; cursor: pointer; opacity: 0.8;   
+	color: brown;
+    font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+	font-weight: bold;
+}
+.panel a:hover {
+	opacity: 1;
+}
