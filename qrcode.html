@@ -1,0 +1,26 @@
+﻿<!DOCTYPE HTML>
+<HTML lang="en"><HEAD>
+    <META content="IE=11.0000"  http-equiv="X-UA-Compatible">
+<META charset="UTF-8">	
+<TITLE>QR Code实时生成</TITLE>		
+<LINK href="css/qrcode.css" rel="stylesheet" type="text/css"> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18450"></HEAD> 
+<link rel="shortcut icon" href="favicon.ico" />
+<BODY>
+
+<div class="title">
+<INPUT type="text" id="qrcontent" placeholder="请输入网址或信息内容" value=""  onkeyup="getQrCode($('#qrcontent').val().trim());">
+
+	<div class="qrzone">
+		<SMALL>二维码图案</SMALL>
+		<div id = "qrimage" class="qrimage"></div>
+	</div>
+</div>
+ <script type="text/javascript" src="js/lazyLoad.js"></script>		 
+<SCRIPT src="js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="js/qrcode.js" type="text/javascript"></SCRIPT> 
+<div style="display: none">
+    <script src="http://s95.cnzz.com/z_stat.php?id=1257407203&web_id=1257407203" language="JavaScript"></script>
+</div>
+</BODY>
+</HTML>

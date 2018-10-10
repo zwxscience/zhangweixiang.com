@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="http://zhangweixiang.com/css/error.min.css" type="text/css" media="screen, projection" />
+    <!-- main stylesheet -->
+    <!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="css/ie8.min.css" />
+<![endif]-->
+    <script type="text/javascript" src="http://zhangweixiang.com/js/jquery.min.js"></script>
+    <!-- uiToTop implementation -->
+    <script type="text/javascript" src="http://zhangweixiang.com/js/error-scripts.min.js"></script>
+    <script type="text/javascript" src="http://zhangweixiang.com/js/jquery.tipsy.min.js"></script>
+    <!-- Tipsy -->
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            universalPreloader();
+
+        });
+
+        $(window).load(function () {
+
+            //remove Universal Preloader
+            universalPreloaderRemove();
+
+            rotate();
+            dogRun();
+            dogTalk();
+
+            //Tipsy implementation
+            $('.with-tooltip').tipsy({ gravity: $.fn.tipsy.autoNS });
+
+        });
+
+</script>
+    <title>404 - Not found</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <!-- Universal preloader -->
+    <div id="universal-preloader">
+        <div class="preloader">
+            <img src="http://zhangweixiang.com/images/404/universal-preloader.gif" alt="universal-preloader" class="universal-preloader-preloader" />
+        </div>
+    </div>
+    <!-- Universal preloader -->
+    <div id="wrapper">
+        <!-- 404 graphic -->
+        <div class="graphic">
+        </div>
+        <!-- 404 graphic -->
+        <!-- Not found text -->
+        <div class="not-found-text">
+            <h1 class="not-found-text">
+                抱歉，当前页面未找到!</h1>
+        </div>
+        <!-- Not found text -->
+        <!-- search form -->
+        <div class="search" style="display: none">
+            <form name="search" method="get" action="#" >
+            <input type="text" name="search" value="Search ..." />
+            <input class="with-tooltip" title="Search!" type="submit" name="submit" value="" />
+            </form>
+        </div>
+        <!-- search form -->
+        <!-- top menu -->
+        <div class="top-menu">
+            <a href="http://zhangweixiang.com" class="with-tooltip" title="Return to the home page">
+                网站首页</a> <a href="#" class="with-tooltip" title="Navigate through our sitemap" style="display: none">
+                    Sitemap</a> | <a href="http://zhangweixiang.com/" class="with-tooltip" title="Contact">
+                        联系我们</a> | <a href="http://zhangweixiang.com/private/index.html" class="with-tooltip"
+                            title="Find some fun">找点乐子</a>
+        </div>
+        <!-- top menu -->
+        <div class="dog-wrapper">
+            <!-- dog running -->
+            <div class="dog">
+            </div>
+            <!-- dog running -->
+            <!-- dog bubble talking -->
+            <div class="dog-bubble">
+            </div>
+            <!-- The dog bubble rotates these -->
+            <div class="bubble-options">
+                <p class="dog-bubble">
+                    是不是迷路了啊? 不要担心, 我是一只超强的指路狗!
+                </p>
+                <p class="dog-bubble">
+                    <br />
+                    啦啦啦，我们向快乐出发！
+                </p>
+                <p class="dog-bubble">
+                    <br />
+                    不要担心!我正在想办法搞定呢!
+                </p>
+                <p class="dog-bubble">
+                    我多么希望能有个蛋糕<br />
+                    <img style="margin-top: 8px" src="http://zhangweixiang.com/images/404/cookie.png" alt="cookie" />
+                </p>
+                <p class="dog-bubble">
+                    <br />
+                    快看，有灰机! 灰机灰过来了!
+                </p>
+                <p class="dog-bubble">
+                    <br />
+                    找点乐子吧。<a href="windows/paint.html" target="_blank">点我.</a>
+                </p>
+                <p class="dog-bubble">
+                    或者我只是在转圈? 这...
+                </p>
+                <p class="dog-bubble">
+                    <br />
+                    好吧, 我们现在的确迷失了...
+                </p>
+                <p class="dog-bubble">
+                    我想我看到了一只
+                    <br />
+                    <img style="margin-top: 8px" src="http://zhangweixiang.com/images/404/cat.png" alt="cat" />
+                </p>
+                <p class="dog-bubble">
+                    嘻嘻，我是不是很可爱啊 n(*≧▽≦*)n
+                </p>
+            </div>
+            <!-- The dog bubble rotates these -->
+            <!-- dog bubble talking -->
+        </div>
+        <!-- planet at the bottom -->
+        <div class="planet">
+        </div>
+        <!-- planet at the bottom -->
+    </div>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+        <script type="text/javascript" src="js/updateResult.js"></script>
+    </div>
+</body>
+</html>

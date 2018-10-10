@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://www.17sucai.com/preview/1/2013-05-04/history-date/demo.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>网站时间轴大事记发展历程</title>
+    <meta name="description" content="网站时间轴大事记发展历程">
+    <style type="text/css"></style>
+</head>
+<body>
+    <style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+.demo{width:960px;margin:60px auto 0 auto;}
+/*history*/
+.history{background:url(images/history/line04.gif) repeat-y 187px 0;overflow:hidden;position:relative;}
+.history-date{overflow:hidden;position:relative;}
+.history-date h2{background:#fff url(images/history/icon06.gif) no-repeat 158px 0;height:59px;font-size:25px;font-family:微软雅黑;font-weight:normal;padding-left:45px;margin-bottom:74px; }
+.history-date h2.first{position:absolute;left:0;top:0;width:935px;z-index:99;}
+.history-date h2 a{color:#00bbff;display:inline-block;*display:inline;zoom:1;background:url(images/history/icon08.gif) no-repeat right 50%;padding-right:17px;margin:21px 97px 0 0;}
+.history-date h2 a:hover{text-decoration:none;}
+.history-date h2 img{vertical-align:-5px;}
+.history-date h2.date02{background:none;}
+.history-date ul li{background:url(images/history/icon07.gif) no-repeat 180px 0;padding-bottom:50px;zoom:1;}
+.history-date ul li.last{padding-bottom:0;}
+.history-date ul li:after{content:" ";display:block;height:0;clear:both;visibility:hidden;}
+.history-date ul li h3{float:left;width:168px;text-align:right;padding-right:19px;color:#c3c3c3;font:normal 18px/16px Arial;}
+.history-date ul li h3 span{display:block;color:#d0d0d0;font-size:12px;}
+.history-date ul li dl{float:left;padding-left:41px;margin-top:-5px;font-family:微软雅黑;}
+.history-date ul li dl dt{font:20px/22px 微软雅黑;color:#737373;}
+.history-date ul li dl dt span{display:block;color:#787878;font-size:12px;}
+.history-date ul li.green h3{color:#1db702;}
+.history-date ul li.green h3 span{color:#a8dda3;}
+.history-date ul li.green dl{margin-top:-8px;}
+.history-date ul li.green dl dt{font-size:30px;line-height:28px;}
+.history-date ul li.green dl dt a{display:inline-block;*display:inline;zoom:1;overflow:hidden;vertical-align:middle;margin-left:12px;}
+.history-date ul li.green dl dd{padding-top:20px;display:none;}
+.history-date ul li.green dl dd img{float:left;}
+.history-date ul li.green dl dd p{overflow:hidden;zoom:1;line-height:21px;color:#787878;}
+
+.history-date h2.first .more-history{font-size:16px;background:transparent;margin-left:30px;}
+.history-date h2.first .more-history:hover{text-decoration:underline;}
+
+*body .history-date ul li dl dt{_font-size:12px!important;_font-weight:bold;}
+*body .history-date ul li dl dt span{_font-weight:normal!important;}
+*body .history-date ul li.green dl dt a{_background:transparent!important;*background:transparent!important;*font-size:12px!important;_font-weight:normal!important;}
+</style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            systole();
+        });
+
+        function systole() {
+            if (!$(".history").length) {
+                return;
+            }
+            var $warpEle = $(".history-date"),
+		$targetA = $warpEle.find("h2 a,ul li dl dt a"),
+		parentH,
+		eleTop = [];
+
+            parentH = $warpEle.parent().height();
+            $warpEle.parent().css({ "height": 59 });
+
+            setTimeout(function () {
+
+                $warpEle.find("ul").children(":not('h2:first')").each(function (idx) {
+                    eleTop.push($(this).position().top);
+                    $(this).css({ "margin-top": -eleTop[idx] }).children().hide();
+                }).animate({ "margin-top": 0 }, 1600).children().fadeIn();
+
+                $warpEle.parent().animate({ "height": parentH }, 2600);
+
+                $warpEle.find("ul").children(":not('h2:first')").addClass("bounceInDown").css({ "-webkit-animation-duration": "2s", "-webkit-animation-delay": "0", "-webkit-animation-timing-function": "ease", "-webkit-animation-fill-mode": "both" }).end().children("h2").css({ "position": "relative" });
+
+            }, 600);
+
+            $targetA.click(function () {
+                $(this).parent().css({ "position": "relative" });
+                $(this).parent().siblings().slideToggle();
+                $warpEle.parent().removeAttr("style");
+                return false;
+            });
+        };
+</script>
+    <div class="demo">
+        <div class="history" style="height: 1400px; display: block;">
+		<div class="history-date">
+                <ul>
+                    <h2 class="first" style="position: relative;">
+                        <a href="history-date.html">2017年</a><img src="./images/history/img05.gif" alt="此章微详网站历程">			
+                        <a class="more-history" href="#" style="display: none">查看该年大事件&gt;&gt;</a>
+                    </h2>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            08.21<span>2017</span></h3>
+                        <dl style="display: block;">
+                            <dt>更新手机版首页<span>用对话让你更了解我</span></dt>
+                            <a href="http://zhangweixiang.com/mobile/" target="_blank">http://zhangweixiang.com/mobile/</a>
+                        </dl>
+                    </li>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            01.26<span>2017</span></h3>
+                        <dl style="display: block;">
+                            <dt>更新电脑版网站首页<span>用桌面的形式查看更爽啊</span></dt>
+							<a href="http://zhangweixiang.com" target="_blank">http://zhangweixiang.com/</a>
+                        
+                        </dl>
+                    </li>
+                    
+                </ul>
+            </div>
+		      <div class="history-date">
+                <ul>
+                    <h2 class="first" style="position: relative;">
+                        <a href="history-date.html">2016年</a><img src="./images/history/img05.gif" alt="此章微详网站历程">
+                        <a class="more-history" href="#" style="display: none">查看该年大事件&gt;&gt;</a>
+                    </h2>
+					    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            07.13<span>2016</span></h3>
+                        <dl style="display: block;">
+                            <dt>发布领证三年日志<span>三年如一日</span></dt>
+							<a href="http://blog.zhangweixiang.com/2016/07/13/three-years-marriage-memory/" target="_blank">http://blog.zhangweixiang.com/2016/07/13/three-years-marriage-memory/</a>
+                        </dl>
+                    </li>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            03.15<span>2016</span></h3>
+                        <dl style="display: block;">
+                            <dt>修正blog音乐加载错误<span>听音乐更快了</span></dt>
+                           </dl>
+                    </li>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            02.14<span>2016</span></h3>
+                        <dl style="display: block;">
+                            <dt>发布第一篇新日志<span>Hi,曦曦</span></dt>
+							<a href="http://blog.zhangweixiang.com/2016/02/14/long-time-no-see-xixi/" target="_blank">http://blog.zhangweixiang.com/2016/02/14/long-time-no-see-xixi/</a>
+                        </dl>
+                    </li>
+                    <li class="green bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            01.26<span>2016</span></h3>
+                        <dl style="display: block;">
+                            <dt>发布BLOG分站<span>日志从此在这里书写</span></dt>
+                            <a href="http://blog.zhangweixiang.com" target="_blank">http://blog.zhangweixiang.com</a>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="history-date">
+                <ul>
+                    <h2 class="first" style="position: relative;">
+                        <a href="history-date.html">2015年</a><img src="./images/history/img05.gif" alt="此章微详网站历程">
+                        <a class="more-history" href="#" style="display: none">查看该年大事件&gt;&gt;</a>
+                    </h2>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            11.07<span>2015</span></h3>
+                        <dl style="display: block;">
+                            <dt>曦曦页面发布<span>遥怜小儿女，未解忆长安</span></dt>
+                            <a href="http://zhangweixiang.com/private/xixi/index.html" target="_blank">http://zhangweixiang.com/private/xixi/index.html</a>
+                        </dl>
+                    </li>
+                    <li class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            05.26<span>2015</span></h3>
+                        <dl style="display: block;">
+                            <dt>网站历程页发布<span>可以查看网站的更新情况</span></dt>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            02.12<span>2015</span></h3>
+                        <dl style="display: block;">
+                            <dt>错误页面导向处理添加<span>有只可爱的狗狗</span></dt>
+                            <a href="http://zhangweixiang.com/404.html" target="_blank">http://zhangweixiang.com/404.html</a>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="history-date">
+                <ul>
+                    <h2 class="bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;
+                        position: relative;">
+                        <a href="history-date.html" style="display: inline-block;">2014年</a></h2>
+						<li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            11.12<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>页面背景可以根据当前节气切换<span>知道现在是什么节气啦</span></dt>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            11.02<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>乱码修正<span>可以查看自己的留言啦</span></dt>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            10.31<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>修正了有阴影的字</dt>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            10.07<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>仙剑音乐页面完成<span>很好听的，欢迎试听下载</span></dt>
+                            <a href="http://zhangweixiang.com/private/m/palmusic.html" target="_blank">http://zhangweixiang.com/private/m/palmusic.html</a>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            10.01<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>求婚页面更新</dt>
+                        </dl>
+                    </li>
+                    <li class="green bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            07.29<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>结婚：回首七年，历历在目<span>珍惜当下，迈向远方</span></dt>
+                            <a href="http://zhangweixiang.com/private/love/index.html" target="_blank">http://zhangweixiang.com/private/love/index.html</a>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            06.15<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>网站备案成功，可域名访问<span>推荐电脑访问，可以留言呦。</span></dt>
+                            <a href="http://zhangweixiang.com" target="_blank">http://zhangweixiang.com</a>
+                        </dl>
+                    </li>
+                    <li style="margin-top: 0px; -webkit-animation-duration: 2s; -webkit-animation-delay: 0ms;
+                        -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;"
+                        class="bounceInDown">
+                        <h3 style="display: block;">
+                            05.19<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>完成测试页面<span>非常简单，可以统计用户访问数目： </span></dt>
+                            <a href="http://zhangweixiang.com/default.aspx" target="_blank">http://zhangweixiang.com/default.aspx</a>
+                        </dl>
+                    </li>
+                    <li class="green bounceInDown" style="margin-top: 0px; -webkit-animation-duration: 2s;
+                        -webkit-animation-delay: 0ms; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both;">
+                        <h3 style="display: block;">
+                            5.15<span>2014</span></h3>
+                        <dl style="display: block;">
+                            <dt>个人网站申请成功<span>开始这一段新的旅程</span></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+        <script type="text/javascript" src="js/updateResult.js"></script>
+    </div>
+</body>
+</html>

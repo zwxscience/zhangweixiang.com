@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>此章微详-主页</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+<link type="text/css" rel="stylesheet" href="css/windowindex.css"/>
+<link type="text/css" rel="stylesheet" href="css/jquery.tool.css"/>
+<link type="text/css" rel="stylesheet" href="css/smartMenu.css"/>
+
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="private/js/IsMobile.min.js"></script>
+<script type="text/javascript" src="js/jquery.tool.js"></script>
+<script type="text/javascript" src="js/shortcut.js"></script>
+<script type="text/javascript" src="js/templates.js"></script>
+<script type="text/javascript" src="js/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="js/core.js"></script>
+<script type="text/javascript" src="js/updateResult.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	document.body.onselectstart = document.body.ondrag = function(){
+		return false;
+	}
+    if (IsMobile()) 
+	{
+		window.location.href = "mobile/index.html"; 
+	}else
+    {
+        $("#zwx").show();
+		//加载窗体
+		Core.init();
+	}
+
+});
+</script>
+
+</head>
+<body id="zwx" style="background:url(images/1.jpg) repeat right bottom transparent;display:none">
+    <DIV class="slideshow">
+        <DIV class="slideshow-image" style='background-image: url("images/1.jpg");'></DIV>
+        <DIV class="slideshow-image" style='background-image: url("images/2.jpg");'></DIV>
+        <DIV class="slideshow-image" style='background-image: url("images/3.jpg");'></DIV>
+        <DIV class="slideshow-image" style='background-image: url("images/4.jpg");'></DIV>
+    </DIV>
+<div id="task-bar">
+	<ul class="task-window"></ul>
+	<ul class="task-panel">
+        <li class="sys" title="开始"><b class="">开始</b></li><li class="sys" title="显示桌面" style="width: 20px;"><b class=""></b></li>
+	</ul>
+</div>
+<div id="desk"><ul></ul></div>
+    <div style="display: none">
+        <script src="http://s11.cnzz.com/z_stat.php?id=1256717350&web_id=1256717350" language="JavaScript"></script>
+    </div>
+</body>
+</html>

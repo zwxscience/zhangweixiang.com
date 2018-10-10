@@ -1,2 +1,1 @@
 # zhangweixiang.com
-zhangweixiang.com
