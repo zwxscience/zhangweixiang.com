@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Site>
+  <Page URL="/2016/01/25/website-name/" visitCount="1" title="此章微详的由来 - 此章微详" from="blog">/2016/01/25/website-name/</Page>
+  <Page URL="http://blog.zhangweixiang.com/" visitCount="8" title="Xavier's Blog - 此章微详" from="blog">http://blog.zhangweixiang.com/</Page>
+  <Page URL="/2017/01/26/to-celebrate-the-spring-festival/" visitCount="1" title="过年 : 桃源望断无寻处 - 此章微详" from="blog">/2017/01/26/to-celebrate-the-spring-festival/</Page>
+  <Page URL="http://zhangweixiang.com/" visitCount="1" title="此章微详-主页" from="mysite">http://zhangweixiang.com/</Page>
+  <Page URL="/windows/paint.html" visitCount="1" title="黑板绘图" from="mysite">/windows/paint.html</Page>
+  <Page URL="/windows/qrcode.html" visitCount="1" title="QR Code实时生成" from="mysite">/windows/qrcode.html</Page>
+  <Page URL="/mobile/" visitCount="226" title="与此章微详聊天中" from="mysite">/mobile/</Page>
+  <Page URL="http://localhost:8080/" visitCount="4" title="����΢��-��ҳ" from="mysite">http://localhost:8080/</Page>
+</Site>
