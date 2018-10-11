@@ -1,6 +1,6 @@
 //id,iconName,iconUrl,url,width,height
 var shortcut = [
-[0,"我的简历","images/icos/resume.png","http://zhangweixiang.com/cv/cn.html",1000,700],
+[0,"我的简历","images/icos/resume.png","http://cv.zhangweixiang.com/",1000,700],
 [1, "我的Blog", "images/icos/11.png", "http://blog.zhangweixiang.com/", 1000, 700],
 [2, "我的Github", "images/icos/github.png", "https://github.com/zwxscience", 1000, 700],
 [3, "我的微博", "images/icos/weibo.png", "http://www.weibo.com/weixiazh", 1000, 700],
