@@ -744,7 +744,7 @@ var GetTaskRight = function(obj){
 //任务栏右键提示
 var GetTaskSystem = function(obj){
     if(!_cache.TaskSystem){
-        _cache.TaskSystem = $('<div class="popup-menu task-menu" style="z-index:99999;bottom:30px;display:none"><ul><li><a menu="close" href="mobile/index.html" target="_self">切换首页</a></li><!--<li><a menu="close" href="javascript:;">用户登录</a></li>--></ul></div>');
+        _cache.TaskSystem = $('<div class="popup-menu task-menu" style="z-index:99999;bottom:30px;display:none"><ul><li><a menu="close" href="http://m.zhangweixiang.com" target="_self">切换首页</a></li><!--<li><a menu="close" href="javascript:;">用户登录</a></li>--></ul></div>');
         $(document.body).append(_cache.TaskSystem);
         $('.task-menu').bind('contextmenu',function(){
             return false;
