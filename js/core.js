@@ -19,7 +19,7 @@ Core.menu={
         data: [[{
             text: "我的简历",
             func: function() {
-                var url = "http://zhangweixiang.com/cv/cn.html";
+                var url = "https://cv.zhangweixiang.com";
                 window.open(url);
             }
         },
@@ -55,7 +55,7 @@ Core.menu={
          {
               text: "我的微信",
             func: function() {
-                var url = "http://zhangweixiang.com/cv/img/weixiangzhang.jpg";
+                var url = "https://cv.zhangweixiang.com/img/weixiangzhang.jpg";
                 window.open(url);
             }
          },
